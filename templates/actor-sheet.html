@@ -1,4 +1,32 @@
-   <!--[if lt IE 8]>
+<!doctype html>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Character Sheet</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+<link rel="stylesheet" href="../styles/bootstrap.min.css">
+<style>
+    body {
+        padding-top: 50px;
+        padding-bottom: 20px;
+    }
+</style>
+<link rel="stylesheet" href="../styles/bootstrap-theme.min.css">
+<link rel="stylesheet" href="../styles/main.css">
+
+<script src="../scripts/jquery-3.6.0.js"></script>
+<script src="../scripts/jquery.dataTables.min.js"></script>
+<script src="../scripts/main.js"></script>
+<script src="../scripts/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+
+
+
+<body>
+    <!--[if lt IE 8]>
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
     <div class="container">
@@ -527,3 +555,9 @@
             </form>
         </main>
     </div>
+    <script>const data = new FormData(document.querySelector('form'));
+        const json = JSON.stringify(Array.from(data).reduce((o, [k, v]) => (o[k] = v, o), {}));
+        console.log(json);</script>
+</body>
+
+</html>

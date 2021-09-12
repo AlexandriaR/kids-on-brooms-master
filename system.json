@@ -1,11 +1,11 @@
 {
   "name": "kids-on-brooms-master",
-  "title": "Simple World-Building",
+  "title": "Kids on Brooms - Revised Template",
   "description": "A minimalist game system which provides configurable Actor and Item templates to support free-form system agnostic game-play.",
   "version": "0.5.0",
   "minimumCoreVersion": "0.8.4",
   "compatibleCoreVersion": "0.8.6",
-  "author": "Atropos",
+  "author": "Alexandria",
   "esmodules": ["module/simple.js"],
   "styles": ["styles/simple.css"],
   "packs": [],

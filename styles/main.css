@@ -1,0 +1,511 @@
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+
+
+
+.red {
+  background: red;
+}
+
+.blue {
+  background: blue;
+}
+
+.hide {
+  display: none !important;
+}
+
+textarea {
+  font-size: 12px;
+  text-align: left;
+  width: calc(100% - 20px - 2px);
+  border-radius: 10px;
+  padding: 10px;
+  resize: none;
+  overflow: hidden;
+  height: 15em;
+}
+
+input[type=checkbox] {
+  cursor: pointer;
+}
+
+div.box {
+  margin-top: 10px;
+}
+
+main {
+  width: 100%;
+  right: 0;
+  left: 0;
+  padding-right: 3px;
+  padding-left: 3px;
+  margin-top: 5px;
+}
+ div.textblock {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+}
+ div.textblock label {
+  text-align: center;
+  border: 1px solid black;
+  border-left: 0;
+  font-size: 12px;
+  height: calc(26em - 20px - 2px);
+  text-orientation: sideways;
+  writing-mode: vertical-lr;
+  border-radius: 0 10px 10px 0;
+  transform: rotate(180deg);
+  padding: 4px 0;
+  font-weight: bold;
+}
+
+div.inventory {
+  display: flex;
+  flex-direction: column;
+}
+
+div.inventory label {
+  text-align: center;
+  border: 1px solid black;
+  border-bottom: 0;
+  font-size: 12px;
+  width: calc(100% - 20px - 2px);
+  height: 100%;
+  text-orientation:upright;
+  writing-mode:horizontal-tb;
+  border-radius: 10px 10px 0 0;
+  transform: rotate(0deg);
+  padding: 4px 0;
+  margin: 0;
+  font-weight: bold;
+}
+
+ div.textblock textarea {
+  border: 1px solid black;
+}
+ ul {
+  margin: 0;
+  padding: 0;
+}
+ ul li {
+  list-style-image: none;
+  display: block;
+}
+ ::-moz-placeholder {
+  color: #bbb;
+}
+ :-ms-input-placeholder {
+  color: #bbb;
+}
+ ::placeholder {
+  color: #bbb;
+}
+ label {
+  text-trans: uppercase;
+  font-size: 12px;
+}
+  header {
+  display: flex;
+  align-contents: stretch;
+  align-items: stretch;
+}
+  div.charname {
+  border: 1px solid black;
+  border-right: 0;
+  border-radius: 10px 0 0 10px;
+  padding: 5px 0;
+  background-color: #eee;
+  width: 30%;
+  display: flex;
+  flex-direction: column-reverse;
+  bottom: 0;
+  top: 0;
+  margin: auto;
+}
+  div.charname input {
+  padding: 0.5em;
+  margin: 5px;
+  border: 0;
+}
+  div.charname label {
+  padding-left: 1em;
+}
+  div.misc {
+  width: 100%;
+  
+  border-radius: 10px;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+  div.misc ul {
+  padding: 10px 0px 5px 0px;
+  display: flex;
+  flex-wrap: wrap;
+}
+  div.misc  {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+div.csshell {
+  width: 100%;
+  display: flex;
+  flex-direction: column-reverse;
+  padding: 10px 0px 5px 0px;
+}
+div.misc ul li{
+  width: 50%;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+  div.misc ul.details li {
+  width: 33.3333333%;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+  div.misc label {
+  margin-bottom: 5px;
+}
+  div.misc input {
+  border: 0;
+  border-bottom: 1px solid #ddd;
+  width: 100%;
+}
+ main {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+ main form div.label-container {
+  position: relative;
+  width: 100%;
+  height: 18px;
+  margin-top: 6px;
+  border: 1px solid black;
+  border-left: 0;
+  text-align: center;
+}
+ main form div.label-container > label {
+  position: absolute;
+  left: 0;
+  top: 1px;
+  trans: translate(0%, 50%);
+  width: 100%;
+  font-size: 8px;
+}
+ main form > div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+ main form > div div.attributes {
+  width: min-content;
+  height: min-content;
+
+}
+ main form > div div.attributes div.scores {
+  background-color: #bbb;
+  border-radius: 10px;
+  margin-top: 5px;
+}
+
+ main form > div div.attributes div.scores label {
+  font-size: 12px;
+  font-weight: bold;
+}
+ main form > div div.attributes div.scores ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100%;
+}
+ main form > div div.attributes div.scores ul li {
+  height: min-content;
+  background-color: white;
+  border: 1px solid black;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  border-radius: 10px;
+}
+ main form > div div.attributes div.scores ul li input {
+  width: 60%;
+  padding: 0;
+  border: 0;
+}
+ main form > div div.attributes div.scores ul li div.score input {
+  text-align: center;
+  font-size: 40px;
+  min-width: 45px;
+  padding: 0px 0px 0px 0px;
+  border-bottom: 1px;
+  background: white;
+}
+ main form > div div.attributes div.scores  div.modifier {
+  margin-top: 3px;
+  font-size: 12px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+ main form > div div.attributes div.scores ul li div.modifier input {
+  background: white;
+  width: 30px;
+  height: 20px;
+  border: 1px inset black;
+  border-radius: 20px;
+  margin: -1px;
+  text-align: center;
+  font-size: 12px;
+}
+
+main form > div div.attributes div.scores ul li div.modifier label {
+  background: white;
+  border: 1px inset black;
+  border-radius: 20px;
+  padding-left: 0px;
+  padding-right: 0px;
+  text-align: center;
+  font-size: 12px;
+}
+
+
+ main form > div div.attributes div.attr-applications div.proficiencybonus {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+ main form > div div.attributes div.attr-applications div.proficiencybonus input {
+  width: 30px;
+  height: 28px;
+  border: 1px solid black;
+  text-align: center;
+  border-radius: 10px;
+}
+ main form > div div.attributes div.attr-applications div.list-div {
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px 5px;
+}
+ main form > div div.attributes div.attr-applications div.list-div div.label {
+  margin-top: 10px;
+  margin-bottom: 2.5px;
+  text-align: center;
+  text-trans: uppercase;
+  font-size: 10px;
+  font-weight: bold;
+}
+ main form > div div.attributes div.attr-applications div.list-div ul li {
+  display: flex;
+  align-items: center;
+}
+ main form > div div.attributes div.attr-applications div.list-div ul li > * {
+  margin-left: 5px;
+}
+ main form > div div.attributes div.attr-applications div.list-div ul li label {
+  text-trans: none;
+  font-size: 8px;
+  text-align: left;
+  order: 3;
+}
+ main form > div div.attributes div.attr-applications div.list-div ul li label span.skill {
+  color: #bbb;
+}
+ main form > div div.attributes div.attr-applications div.list-div ul li input[type=text] {
+  width: 30px;
+  font-size: 12px;
+  text-align: center;
+  border: 0;
+  border-bottom: 1px solid black;
+  order: 2;
+}
+ main form > div div.attributes div.attr-applications div.list-div ul li input[type=checkbox] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 10px;
+  height: 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+  order: 1;
+}
+ main form > div div.attributes div.attr-applications div.list-div ul li input[type=checkbox]:checked {
+  background-color: black;
+}
+ main form > div div.passive-perception {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+ main form > div div.passive-perception input {
+  width: 30px;
+  height: 28px;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+ main form > div div.otherprofs textarea {
+  height: 26em;
+  width: 100%
+}
+ main form div.combat {
+  background-color: #eee;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 10px;
+}
+ main form div.combat > div {
+  overflow: hidden;
+}
+ 
+ main form div.masteryprogress {
+  border: 1px solid black;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+ main form div.masteryprogress > div {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+}
+ main form div.masteryprogress > div > label {
+  text-align: center;
+}
+
+ main form div.masteryprogress > div > table th {
+  font-size: 10px;
+  color: #000;
+}
+ main form div.masteryprogress > div > table td {
+  padding: 2px;
+}
+ main form div.masteryprogress > div > table input {
+  width: calc(100% - 4px);
+  border: 0;
+  background-color: #eee;
+  font-size: 10px;
+  padding: 3px;
+}
+ main form div.equipment {
+  border: 1px solid black;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+ main form div.equipment > div {
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+ main form div.equipment > div > div.money ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+ main form div.equipment > div > div.money ul > li {
+  display: flex;
+  align-items: center;
+}
+ main form div.equipment > div > div.money ul > li label {
+  border: 1px solid black;
+  border-radius: 10px 0 0 10px;
+  border-right: 0;
+  width: 20px;
+  font-size: 8px;
+  text-align: center;
+  padding: 3px 0;
+}
+ main form div.equipment > div > div.money ul > li input {
+  border: 1px solid black;
+  border-radius: 10px;
+  width: 40px;
+  padding: 10px 3px;
+  font-size: 12px;
+  text-align: center;
+}
+ main form div.equipment > div > label {
+  order: 3;
+  text-align: center;
+  flex: 100%;
+}
+ main form div.equipment > div > textarea {
+  flex: 1;
+  border: 0;
+}
+ main form div.flavor {
+  padding: 10px;
+  background: #bbb;
+  border-radius: 10px;
+}
+ main form div.flavor div {
+  background: white;
+  display: flex;
+  flex-direction: column-reverse;
+  padding: 5px;
+  border: 1px solid black;
+}
+ main form div.flavor div label {
+  text-align: center;
+  font-size: 10px;
+  margin-top: 3px;
+}
+ main form div.flavor div textarea {
+  border: 0;
+  border-radius: 0;
+  height: 4em;
+}
+ main form div.flavor div:first-child {
+  border-radius: 10px 10px 0 0;
+}
+ main form div.flavor div:not(:first-child) {
+  margin-top: 10px;
+}
+ main form div.flavor div:last-child {
+  border-radius: 0 0 10px 10px;
+}
+ main form div.features {
+  padding: 10px;
+}
+ main form div.features div {
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column-reverse;
+}
+ main form div.features div label {
+  text-align: center;
+}
+ main form div.features div textarea {
+  border: 0;
+  padding: 5px;
+  height: 43em;
+}
+ div.misc ul li input {
+  border: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+
+
+.padding-on-bottom-of-score {
+padding-bottom: 10%;
+padding-top: 10%;
+position: relative;
+}
+
+
+
+.d_whatthefuck {
+font-size: 40px;
+}

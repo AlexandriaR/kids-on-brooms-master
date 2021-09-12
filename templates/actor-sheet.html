@@ -1,0 +1,563 @@
+<!doctype html>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Character Sheet</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+<link rel="stylesheet" href="../styles/bootstrap.min.css">
+<style>
+    body {
+        padding-top: 50px;
+        padding-bottom: 20px;
+    }
+</style>
+<link rel="stylesheet" href="../styles/bootstrap-theme.min.css">
+<link rel="stylesheet" href="../styles/main.css">
+
+<script src="../module/jquery-3.6.0.js"></script>
+<script src="../module/jquery.dataTables.min.js"></script>
+<script src="../module/main.js"></script>
+<script src="../module/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+
+
+
+<body>
+    <!--[if lt IE 8]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <div class="container">
+        <div role="tablist">
+            <button role="tab" aria-selected="true" aria-controls="panel-1" id="tab-1" tabindex="0">
+                Character Details
+            </button>
+            <button role="tab" aria-selected="false" aria-controls="panel-2" id="tab-2" tabindex="-1">
+                Mastery Progress
+            </button>
+        </div>
+        <main style="height:100%">
+            <form id="charsheet">
+                <div role="tabpanel" id="panel-1" aria-labelledby="tab-1">
+                    <div class="charsheet" style="width:100%">
+                        <div class="misc">
+                            <ul>
+                                <li>
+                                    <label for="playername">Player Name</label><input name="playername" id="playername"
+                                        value="{{data.playername}}" />
+                                </li>
+                                <li>
+                                    <label for="playerpronouns">Pronouns</label><input name="playerpronouns"
+                                        id="playerpronouns" />
+                                </li>
+                            </ul>
+                            <ul>
+                                <li>
+                                    <label for="charname">Character Name</label><input name="charname" id="charname" />
+                                </li>
+                                <li>
+                                    <label for="charpronouns">Pronouns</label><input name="charpronouns"
+                                        id="charpronouns" />
+                                </li>
+                            </ul>
+                            <ul class="details">
+                                <li>
+                                    <label for="year">Year</label><input name="year" id="year" />
+                                </li>
+                                <li>
+                                    <label for="birthmonth">Birth Month</label><input name="birthmonth"
+                                        id="birthmonth" />
+                                </li>
+                                <li>
+                                    <label for="family">Family</label><input name="family" id="family" />
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <div class="otherprofs box textblock">
+                                <label for="focus-desc">Focus Description</label><textarea name="focus-desc"></textarea>
+                            </div>
+                            <div class="misc csshell">
+                                <label for="grade-str">Grade Strength</label><input name="grade-str" id="grade-str" />
+                            </div>
+                            <div class="misc csshell">
+                                <label for="strength-1">Strength 1</label><input name="strength-1" id="strength-1" />
+                            </div>
+                            <div class="misc csshell">
+                                <label for="strength-2">Strength 2</label><input name="strength-2" id="strength-2" />
+                            </div>
+                            <div class="misc csshell">
+                                <label for="travel-str">Travel Strength</label><input name="travel-str"
+                                    id="travel-str" />
+                            </div>
+                            <div class="container"
+                                style="margin:0; max-width: 100%; width:100%; height: auto; padding-left: 0; padding-right: 0">
+                                <div class="row">
+                                    <div class="col-lg-9">
+                                        <div class="misc csshell" style="width:10%">
+                                            <label for="adver-tokens">Adversity Tokens</label><input type="number"
+                                                name="adver-tokens" id="adver-tokens" />
+                                        </div>
+                                        <div class="misc csshell">
+                                            <label for="familiar">Familiar</label><input name="familiar"
+                                                id="familiar" />
+                                        </div>
+                                        <div class="misc csshell">
+                                            <label for="familiar-mod">Familiar Modifier</label><input
+                                                name="familiar-mod" id="familiar-mod" />
+                                        </div>
+                                        <div class="misc csshell">
+                                            <label for="fear">Fear</label><input name="fear" id="fear" />
+                                        </div>
+                                        <div class="otherprofs box textblock">
+                                            <label for="specialization">Specialization</label><textarea
+                                                name="specialization"></textarea>
+                                        </div>
+                                        <div>
+                                            <div class="attributes" style="
+                                                  width: 100%;
+                                                  ">
+                                                <div class="scores container" style="
+                                                     width: 100%;
+                                                     ">
+                                                    <ul class="row">
+                                                        <li class="col-lg-4" style="padding:0">
+                                                            <div class="score padding-on-bottom-of-score">
+                                                                <label for="fightscore"
+                                                                    class="justify-content-center d-flex"
+                                                                    style="flex-direction:row">Fight</label>
+                                                                <div
+                                                                    class="row justify-content-center align-items-center">
+                                                                    <div
+                                                                        class="col-lg-5 align-items-center justify-content-right d-flex ">
+                                                                        <div class="row justify-content-center"
+                                                                            style="flex-direction:row">
+
+                                                                            <div class="col-lg-7 justify-content-center align-items-start d-flex"
+                                                                                style="padding:0">
+                                                                                <label for="fightscore"
+                                                                                    style="font-size:40px">D</label><input
+                                                                                    id="fightscore" name="fightscore"
+                                                                                    placeholder="20">
+                                                                            </div>
+                                                                        </div>
+
+                                                                    </div>
+
+                                                                    <div class="modifier col-lg-5 d-flex justify-content-center align-items-end"
+                                                                        style="flex-direction:column;padding: 0;/* margin-right: 10% */">
+
+                                                                        <div class="row  justify-content-center"
+                                                                            style="margin: 0">
+                                                                            <div class="row justify-content-center">
+                                                                                <label class="col-lg-6"
+                                                                                    for="statfightmod">Stat</label><input
+                                                                                    class="col-sm-5" name="statfightmod"
+                                                                                    placeholder="0">
+                                                                            </div>
+                                                                            <div class="row justify-content-center">
+                                                                                <label class="col-lg-6"
+                                                                                    for="magicfightmod">Magic</label><input
+                                                                                    class="col-sm-5"
+                                                                                    name="magicfightmod"
+                                                                                    placeholder="0">
+                                                                            </div>
+                                                                            <div class="row justify-content-center">
+                                                                                <label class="col-lg-6"
+                                                                                    for="focusfightmod">Focus</label><input
+                                                                                    class="col-sm-5"
+                                                                                    name="focusfightmod"
+                                                                                    placeholder="0">
+                                                                            </div>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                        </li>
+                                                        <li class="col-lg-4" style="padding:0">
+                                                            <div class="score padding-on-bottom-of-score">
+                                                                <label for="brainsscore"
+                                                                    class="justify-content-center d-flex"
+                                                                    style="flex-direction:row">Brains</label>
+                                                                <div
+                                                                    class="row justify-content-center align-items-center">
+                                                                    <div
+                                                                        class="col-lg-5 align-items-center justify-content-right d-flex ">
+                                                                        <div class="row justify-content-center"
+                                                                            style="flex-direction:row">
+
+                                                                            <div class="col-lg-7 justify-content-center align-items-start d-flex"
+                                                                                style="padding:0">
+                                                                                <label for="brainsscore"
+                                                                                    style="font-size:40px">D</label><input
+                                                                                    id="brainsscore" name="brainsscore"
+                                                                                    placeholder="20">
+                                                                            </div>
+                                                                        </div>
+
+                                                                    </div>
+
+                                                                    <div class="modifier col-lg-5 d-flex justify-content-center align-items-end"
+                                                                        style="flex-direction:column;padding: 0;/* margin-right: 10% */">
+
+                                                                        <div class="row  justify-content-center"
+                                                                            style="margin: 0">
+                                                                            <div class="row justify-content-center">
+                                                                                <label class="col-lg-6"
+                                                                                    for="statbrainsmod">Stat</label><input
+                                                                                    class="col-sm-5"
+                                                                                    name="statbrainsmod"
+                                                                                    placeholder="0">
+                                                                            </div>
+                                                                            <div class="row justify-content-center">
+                                                                                <label class="col-lg-6"
+                                                                                    for="magicbrainsmod">Magic</label><input
+                                                                                    class="col-sm-5"
+                                                                                    name="magicbrainsmod"
+                                                                                    placeholder="0">
+                                                                            </div>
+                                                                            <div class="row justify-content-center">
+                                                                                <label class="col-lg-6"
+                                                                                    for="focusbrainsmod">Focus</label><input
+                                                                                    class="col-sm-5"
+                                                                                    name="focusbrainsmod"
+                                                                                    placeholder="0">
+                                                                            </div>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                        </li>
+                                                        <li class="col-lg-4" style="padding:0">
+                                                            <div class="score padding-on-bottom-of-score">
+                                                                <label for="charmscore"
+                                                                    class="justify-content-center d-flex"
+                                                                    style="flex-direction:row">Charm</label>
+                                                                <div
+                                                                    class="row justify-content-center align-items-center">
+                                                                    <div
+                                                                        class="col-lg-5 align-items-center justify-content-right d-flex ">
+                                                                        <div class="row justify-content-center"
+                                                                            style="flex-direction:row">
+
+                                                                            <div class="col-lg-7 justify-content-center align-items-start d-flex"
+                                                                                style="padding:0">
+                                                                                <label for="charmscore"
+                                                                                    style="font-size:40px">D</label><input
+                                                                                    id="charmscore" name="charmscore"
+                                                                                    placeholder="20">
+                                                                            </div>
+                                                                        </div>
+
+                                                                    </div>
+
+                                                                    <div class="modifier col-lg-5 d-flex justify-content-center align-items-end"
+                                                                        style="flex-direction:column;padding: 0;/* margin-right: 10% */">
+
+                                                                        <div class="row  justify-content-center"
+                                                                            style="margin: 0">
+                                                                            <div class="row justify-content-center">
+                                                                                <label class="col-lg-6"
+                                                                                    for="statcharmmod">Stat</label><input
+                                                                                    class="col-sm-5" name="statcharmmod"
+                                                                                    placeholder="0">
+                                                                            </div>
+                                                                            <div class="row justify-content-center">
+                                                                                <label class="col-lg-6"
+                                                                                    for="magiccharmmod">Magic</label><input
+                                                                                    class="col-sm-5"
+                                                                                    name="magiccharmmod"
+                                                                                    placeholder="0">
+                                                                            </div>
+                                                                            <div class="row justify-content-center">
+                                                                                <label class="col-lg-6"
+                                                                                    for="focuscharmmod">Focus</label><input
+                                                                                    class="col-sm-5"
+                                                                                    name="focuscharmmod"
+                                                                                    placeholder="0">
+                                                                            </div>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                        </li>
+
+                                                    </ul>
+                                                    <ul class="row">
+                                                        <li class="col-lg-4" style="padding:0">
+                                                            <div class="score padding-on-bottom-of-score">
+                                                                <label for="flightscore"
+                                                                    class="justify-content-center d-flex"
+                                                                    style="flex-direction:row">Flight</label>
+                                                                <div
+                                                                    class="row justify-content-center align-items-center">
+                                                                    <div
+                                                                        class="col-lg-5 align-items-center justify-content-right d-flex ">
+                                                                        <div class="row justify-content-center"
+                                                                            style="flex-direction:row">
+
+                                                                            <div class="col-lg-7 justify-content-center align-items-start d-flex"
+                                                                                style="padding:0">
+                                                                                <label for="flightscore"
+                                                                                    style="font-size:40px">D</label><input
+                                                                                    id="flightscore" name="flightscore"
+                                                                                    placeholder="20">
+                                                                            </div>
+                                                                        </div>
+
+                                                                    </div>
+
+                                                                    <div class="modifier col-lg-5 d-flex justify-content-center align-items-end"
+                                                                        style="flex-direction:column;padding: 0;/* margin-right: 10% */">
+
+                                                                        <div class="row  justify-content-center"
+                                                                            style="margin: 0">
+                                                                            <div class="row justify-content-center">
+                                                                                <label class="col-lg-6"
+                                                                                    for="statflightmod">Stat</label><input
+                                                                                    class="col-sm-5"
+                                                                                    name="statflightmod"
+                                                                                    placeholder="0">
+                                                                            </div>
+                                                                            <div class="row justify-content-center">
+                                                                                <label class="col-lg-6"
+                                                                                    for="magicflightmod">Magic</label><input
+                                                                                    class="col-sm-5"
+                                                                                    name="magicflightmod"
+                                                                                    placeholder="0">
+                                                                            </div>
+                                                                            <div class="row justify-content-center">
+                                                                                <label class="col-lg-6"
+                                                                                    for="focusflightmod">Focus</label><input
+                                                                                    class="col-sm-5"
+                                                                                    name="focusflightmod"
+                                                                                    placeholder="0">
+                                                                            </div>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                        </li>
+                                                        <li class="col-lg-4" style="padding:0">
+                                                            <div class="score padding-on-bottom-of-score">
+                                                                <label for="brawnscore"
+                                                                    class="justify-content-center d-flex"
+                                                                    style="flex-direction:row">Brawn</label>
+                                                                <div
+                                                                    class="row justify-content-center align-items-center">
+                                                                    <div
+                                                                        class="col-lg-5 align-items-center justify-content-right d-flex ">
+                                                                        <div class="row justify-content-center"
+                                                                            style="flex-direction:row">
+
+                                                                            <div class="col-lg-7 justify-content-center align-items-start d-flex"
+                                                                                style="padding:0">
+                                                                                <label for="brawnscore"
+                                                                                    style="font-size:40px">D</label><input
+                                                                                    id="brawnscore" name="brawnscore"
+                                                                                    placeholder="20">
+                                                                            </div>
+                                                                        </div>
+
+                                                                    </div>
+
+                                                                    <div class="modifier col-lg-5 d-flex justify-content-center align-items-end"
+                                                                        style="flex-direction:column;padding: 0;/* margin-right: 10% */">
+
+                                                                        <div class="row  justify-content-center"
+                                                                            style="margin: 0">
+                                                                            <div class="row justify-content-center">
+                                                                                <label class="col-lg-6"
+                                                                                    for="statbrawnmod">Stat</label><input
+                                                                                    class="col-sm-5" name="statbrawnmod"
+                                                                                    placeholder="0">
+                                                                            </div>
+                                                                            <div class="row justify-content-center">
+                                                                                <label class="col-lg-6"
+                                                                                    for="magicbrawnmod">Magic</label><input
+                                                                                    class="col-sm-5"
+                                                                                    name="magicbrawnmod"
+                                                                                    placeholder="0">
+                                                                            </div>
+                                                                            <div class="row justify-content-center">
+                                                                                <label class="col-lg-6"
+                                                                                    for="focusbrawnmod">Focus</label><input
+                                                                                    class="col-sm-5"
+                                                                                    name="focusbrawnmod"
+                                                                                    placeholder="0">
+                                                                            </div>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                        </li>
+                                                        <li class="col-lg-4" style="padding:0">
+                                                            <div class="score padding-on-bottom-of-score">
+                                                                <label for="gritscore"
+                                                                    class="justify-content-center d-flex"
+                                                                    style="flex-direction:row">Grit</label>
+                                                                <div
+                                                                    class="row justify-content-center align-items-center">
+                                                                    <div
+                                                                        class="col-lg-5 align-items-center justify-content-right d-flex ">
+                                                                        <div class="row justify-content-center"
+                                                                            style="flex-direction:row">
+
+                                                                            <div class="col-lg-7 justify-content-center align-items-start d-flex"
+                                                                                style="padding:0">
+                                                                                <label for="gritscore"
+                                                                                    style="font-size:40px">D</label><input
+                                                                                    id="gritscore" name="gritscore"
+                                                                                    placeholder="20">
+                                                                            </div>
+                                                                        </div>
+
+                                                                    </div>
+
+                                                                    <div class="modifier col-lg-5 d-flex justify-content-center align-items-end"
+                                                                        style="flex-direction:column;padding: 0;/* margin-right: 10% */">
+
+                                                                        <div class="row  justify-content-center"
+                                                                            style="margin: 0">
+                                                                            <div class="row justify-content-center">
+                                                                                <label class="col-lg-6"
+                                                                                    for="statgritmod">Stat</label><input
+                                                                                    class="col-sm-5" name="statgritmod"
+                                                                                    placeholder="0">
+                                                                            </div>
+                                                                            <div class="row justify-content-center">
+                                                                                <label class="col-lg-6"
+                                                                                    for="magicgritmod">Magic</label><input
+                                                                                    class="col-sm-5" name="magicgritmod"
+                                                                                    placeholder="0">
+                                                                            </div>
+                                                                            <div class="row justify-content-center">
+                                                                                <label class="col-lg-6"
+                                                                                    for="focusgritmod">Focus</label><input
+                                                                                    class="col-sm-5" name="focusgritmod"
+                                                                                    placeholder="0">
+                                                                            </div>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-3 align-self-stretch">
+                                        <div class="otherprofs box textblock inventory" style="height:100%">
+                                            <label style="height:min-content">Quest Inventory</label>
+                                            <textarea placeholder="Equipment list here"
+                                                style="flex: 1 1 auto;"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+                <div tabindex="-1" role="tabpanel" id="panel-2" aria-labelledby="tab-2" hidden="">
+                    <div>
+                        <div class="masteryprogress">
+                            <div>
+                                <label>Mastery Progress</label>
+                                <table id="mprogress" class="mprogress">
+                                    <tr>
+                                        <th>
+                                            Skill Name
+                                        </th>
+                                        <th>
+                                            Specialization
+                                        </th>
+                                        <th>
+                                            Stat
+                                        </th>
+                                        <th>
+                                            Epic Fail
+                                        </th>
+                                        <th>
+                                            Difficulty
+                                        </th>
+                                        <th>
+                                            Attempts
+                                        </th>
+                                        <th>
+                                            Success Points
+                                        </th>
+                                        <th>
+                                            Mastery
+                                        </th>
+                                        <th>
+                                            Completion
+                                        </th>
+                                        <th>
+                                            Master Epic
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input type="text" name="SkillName1" id="SkillName1" />
+                                        </td>
+                                        <td>
+                                            <input type="text" name="Specialization1" id="Specialization1" />
+                                        </td>
+                                        <td>
+                                            <input type="text" name="Stat1" id="Stat1" />
+                                        </td>
+                                        <td>
+                                            <input type="text" name="EpicFail1" id="EpicFail1" />
+                                        </td>
+                                        <td>
+                                            <input type="text" name="Difficulty1" id="Difficulty1" />
+                                        </td>
+                                        <td>
+                                            <input type="text" name="Attempts1" id="Attempts1" />
+                                        </td>
+                                        <td>
+                                            <input type="text" name="SuccessPoints1" id="SuccessPoints1" />
+                                        </td>
+                                        <td>
+                                            <input type="text" name="Mastery1" id="Mastery1" />
+                                        </td>
+                                        <td>
+                                            <input type="text" name="Completion1" id="Completion1" />
+                                        </td>
+                                        <td>
+                                            <input type="text" name="MasterEpic1" id="MasterEpic1" />
+                                        </td>
+                                    </tr>
+                                </table>
+                                <button class="add-row" id="add-row" style="margin:10px">Add Skill Row</button>
+                            </div>
+                        </div>
+                    </div>
+            </form>
+        </main>
+    </div>
+    <script>const data = new FormData(document.querySelector('form'));
+        const json = JSON.stringify(Array.from(data).reduce((o, [k, v]) => (o[k] = v, o), {}));
+        console.log(json);</script>
+</body>
+
+</html>
